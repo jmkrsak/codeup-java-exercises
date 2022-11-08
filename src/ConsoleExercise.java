@@ -24,13 +24,42 @@ public class ConsoleExercise {
       System.out.print("Enter an integer: ");
       int userInt = scanner.nextInt();
 
-      Scanner scannerTwo = new Scanner(System.in);
+      scanner.nextLine();
+
       System.out.print("Enter 3 words: ");
-      String userInput = scannerTwo.next();
-      String userInputTwo = scannerTwo.next();
-      String userInputThree = scannerTwo.next();
+      String userInput = scanner.next();
+      String userInputTwo = scanner.next();
+      String userInputThree = scanner.next();
       System.out.println(userInput + "\n" + userInputTwo + "\n" + userInputThree);
       System.out.printf("%s%n%s%n%s%n", userInput, userInputTwo, userInputThree);
+
+      scanner.nextLine();
+
+      System.out.print("Enter a sentence: ");
+      String userSentence = scanner.nextLine();
+      System.out.println(userSentence);
+
+      System.out.print("Enter the Length of your room: ");
+      String length = scanner.nextLine();
+      int intLength = Integer.parseInt(length);
+      System.out.print("Enter the Width of your room: ");
+      String width = scanner.nextLine();
+      int intWidth = Integer.parseInt(width);
+      int area = intLength * intWidth;
+      int perimeter = (intLength + intWidth) * 2;
+      System.out.print("If your room's length is " + length + ", and your room's width is "
+              + width + "; your rooms area is " + area + ", and your rooms perimeter is " + perimeter + ".");
+
+//      System.out.print("Enter the Length of your room: ");
+//      String lengthV = scanner.nextLine();
+//      int intLengthV = Integer.parseInt(lengthV);
+//      System.out.print("Enter the Width of your room: ");
+//      String widthV = scanner.nextLine();
+//      double intWidthV = Integer.parseInt(widthV);
+//      double areaV = intLengthV * intWidthV;
+//      double perimeterV = (intLengthV + intWidthV) * 2;
+//      System.out.print("If your room's length is " + lengthV + ", and your room's width is "
+//              + widthV + "; your rooms area is " + areaV + ", and your rooms perimeter is " + perimeterV + ".");
 
    }
 }

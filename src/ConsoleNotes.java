@@ -19,6 +19,12 @@ public class ConsoleNotes {
         int userAge = myScanner.nextInt();
         System.out.println("You entered: --> \"" + userAge + "\" <--");
 
+        myScanner.nextLine();
+
+        System.out.print("favorite restaurant: ");
+        String faveRes = myScanner.nextLine();
+        System.out.println("You entered: --> \"" + faveRes + "\" <--");
+
 
     }
 }
