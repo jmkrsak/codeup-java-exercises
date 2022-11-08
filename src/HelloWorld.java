@@ -41,5 +41,17 @@ public class HelloWorld {
             x /= y;
             y -= x;
             System.out.println(x + ", " + y);
+            byte makeGreater = 127;
+            short makeItGreater = 127;
+            System.out.println(++makeItGreater);
+            System.out.println(makeItGreater++);
+
+            System.out.println(makeGreater);
+            System.out.println(makeGreater++);
+            System.out.println(makeGreater + 1);
+            System.out.println(++makeGreater);
+            System.out.println(makeGreater++);
+            System.out.println(makeGreater++);
+            System.out.println(makeGreater);
         }
 }
