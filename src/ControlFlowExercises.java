@@ -1,6 +1,22 @@
-import java.util.Scanner;
+import java.sql.Array;
+import java.util.*;
+
+import static java.lang.Integer.parseInt;
 
 public class ControlFlowExercises {
+    public static String calcLetterGrade(int grade) {
+        if (grade >= 88) {
+            return ("A");
+        } else if (grade >= 80 && grade <= 87) {
+            return ("B");
+        } else if (grade >= 67 && grade <= 79) {
+            return ("C");
+        } else if (grade >= 60 && grade <= 66) {
+            return ("D");
+        } else {
+            return ("F");
+        }
+    }
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -58,7 +74,59 @@ public class ControlFlowExercises {
             }
         }
 
+        boolean submitGradeOne = true;
+        while (submitGradeOne) {
+
+            System.out.print("Enter your numerical grade here: ");
+            int numSix = scanner.nextInt();
+            scanner.nextLine();
+
+            if (numSix >= 88) {
+                System.out.println("A");
+            } else if (numSix >= 80 && numSix <= 87) {
+                System.out.println("B");
+            } else if (numSix >= 67 && numSix <= 79) {
+                System.out.println("C");
+            } else if (numSix >= 60 && numSix <= 66) {
+                System.out.println("D");
+            } else {
+                System.out.println("F");
+            }
+
+            System.out.print("Do you have another grade to submit? [y / n]: ");
+            String answerTwo = scanner.nextLine();
+            if (answerTwo.equalsIgnoreCase("y")) {
+                submitGradeOne = true;
+            } else {
+                submitGradeOne = false;
+            }
+        }
+
+            List<Integer> myList = new ArrayList<Integer>();
+
+            boolean submitGrade = true;
+            while (submitGrade) {
+
+                System.out.print("Enter your numerical grade here: ");
+                int numSeven = scanner.nextInt();
+                scanner.nextLine();
+
+                System.out.println(calcLetterGrade(numSeven));
 
 
+                System.out.print("Do you have another grade to submit? [y / n]: ");
+                String answer = scanner.nextLine();
+                if (answer.equalsIgnoreCase("y")) {
+                    myList.add(numSeven);
+                    submitGrade = true;
+                } else {
+                    myList.add(numSeven);
+                    Optional<Integer> newGrade = myList.stream().reduce((a, b) -> {return a + b;} );
+                    System.out.println(newGrade.get() / myList.size());
+                    System.out.println(calcLetterGrade(newGrade.get() / myList.size()));
+                    submitGrade = false;
+                }
+
+        }
     }
 }
