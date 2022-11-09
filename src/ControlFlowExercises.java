@@ -1,9 +1,7 @@
-import java.sql.Array;
 import java.util.*;
 
-import static java.lang.Integer.parseInt;
-
 public class ControlFlowExercises {
+
     public static String calcLetterGrade(int grade) {
         if (grade >= 88) {
             return ("A");
@@ -16,36 +14,44 @@ public class ControlFlowExercises {
         } else {
             return ("F");
         }
+
     }
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
         int i = 5;
+
         while (i <= 15) {
             System.out.println(i++);
         }
 
         int num = 0;
+
         do {
             System.out.println(num);
             num += 2;
         } while (num <= 100);
 
         int numTwo = 100;
+
         do {
             System.out.println(numTwo);
             numTwo -= 5;
         } while (numTwo >= -10);
+
         for (numTwo = 100; numTwo >= -10; numTwo -= 5) {
             System.out.println(numTwo);
         }
 
         long numThree = 2;
+
         do {
             System.out.println(numThree);
             numThree *= numThree;
         } while (numThree < 1000000);
+
         for (numThree = 2; numThree < 1000000; numThree *= numThree) {
             System.out.println(numThree);
         }
@@ -63,8 +69,11 @@ public class ControlFlowExercises {
         }
 
         System.out.print("Please enter a number: ");
+
         int numFive = scanner.nextInt();
+
         System.out.println(numFive);
+
         for (int x = 0; x <= numFive; x++) {
             if (x == 0) {
                 System.out.println("Here is your table!");
@@ -75,10 +84,13 @@ public class ControlFlowExercises {
         }
 
         boolean submitGradeOne = true;
+
         while (submitGradeOne) {
 
             System.out.print("Enter your numerical grade here: ");
+
             int numSix = scanner.nextInt();
+
             scanner.nextLine();
 
             if (numSix >= 88) {
@@ -94,28 +106,35 @@ public class ControlFlowExercises {
             }
 
             System.out.print("Do you have another grade to submit? [y / n]: ");
+
             String answerTwo = scanner.nextLine();
+
             if (answerTwo.equalsIgnoreCase("y")) {
                 submitGradeOne = true;
             } else {
                 submitGradeOne = false;
             }
+
         }
 
             List<Integer> myList = new ArrayList<Integer>();
 
             boolean submitGrade = true;
+
             while (submitGrade) {
 
                 System.out.print("Enter your numerical grade here: ");
+
                 int numSeven = scanner.nextInt();
+
                 scanner.nextLine();
 
                 System.out.println(calcLetterGrade(numSeven));
 
-
                 System.out.print("Do you have another grade to submit? [y / n]: ");
+
                 String answer = scanner.nextLine();
+
                 if (answer.equalsIgnoreCase("y")) {
                     myList.add(numSeven);
                     submitGrade = true;
@@ -127,6 +146,8 @@ public class ControlFlowExercises {
                     submitGrade = false;
                 }
 
-        }
+            }
+
     }
+
 }
