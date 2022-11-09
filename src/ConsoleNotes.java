@@ -141,11 +141,31 @@ public class ConsoleNotes {
 //            System.out.println("num is: " + num);
 //        }
 
-        int num;
-        for (num = 30; num <= 50; num += 2) {
-            System.out.println("num is: " + num);
-        }
-        System.out.println(num);
+//        int num;
+//        for (num = 30; num <= 50; num += 2) {
+//            System.out.println("num is: " + num);
+//        }
+//        System.out.println(num);
+
+        String myName = "Kenneth";
+        String myName2 = "Kenneth";
+        System.out.println("myName = myName2 = " + (myName == myName2));
+        System.out.println(myName.equals(myName2));
+
+        System.out.println("myName.startsWith(\"Kenny\") = " + myName.startsWith("Kenny"));
+        System.out.println("myName.endsWith(\"net\") = " + myName.endsWith("net"));
+        System.out.println("myName.equalsIgnoreCase(\"KENNETH\") = " + myName.equalsIgnoreCase("KENNETH"));
+        System.out.println("myName.startsWith(\"Ken\") = " + myName.startsWith("Ken"));
+        System.out.println("myName.endsWith(\"eth\") = " + myName.endsWith("eth"));
+
+        String myState = "Texas";
+        System.out.println("myStat.charAt(2) = " + myState.charAt(2));
+        System.out.println("myStat.indexOf(\"Tex\") = " + myState.indexOf("Tex"));
+        System.out.println("myStat.indexOf(\"ex\") = " + myState.indexOf("ex"));
+        System.out.println("myStat.indexOf(\"s\") = " + myState.indexOf("s"));
+
+        System.out.println("myStat.lastIndexOf(\"x\") = " + myState.lastIndexOf("x"));
+
 
     }
 }

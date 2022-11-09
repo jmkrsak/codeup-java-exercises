@@ -106,7 +106,6 @@ public class ControlFlowExercises {
             }
 
             System.out.print("Do you have another grade to submit? [y / n]: ");
-
             String answerTwo = scanner.nextLine();
 
             if (answerTwo.equalsIgnoreCase("y")) {
@@ -117,36 +116,35 @@ public class ControlFlowExercises {
 
         }
 
-            List<Integer> myList = new ArrayList<Integer>();
+        List<Integer> myList = new ArrayList<Integer>();
 
-            boolean submitGrade = true;
+        boolean submitGrade = true;
 
-            while (submitGrade) {
+        while (submitGrade) {
 
-                System.out.print("Enter your numerical grade here: ");
+            System.out.print("Enter your numerical grade here: ");
 
-                int numSeven = scanner.nextInt();
+            int numSeven = scanner.nextInt();
 
-                scanner.nextLine();
+            scanner.nextLine();
 
-                System.out.println(calcLetterGrade(numSeven));
+            System.out.println(calcLetterGrade(numSeven));
+            System.out.print("Do you have another grade to submit? [y / n]: ");
 
-                System.out.print("Do you have another grade to submit? [y / n]: ");
+            String answer = scanner.nextLine();
 
-                String answer = scanner.nextLine();
-
-                if (answer.equalsIgnoreCase("y")) {
+            if (answer.equalsIgnoreCase("y")) {
                     myList.add(numSeven);
                     submitGrade = true;
-                } else {
-                    myList.add(numSeven);
-                    Optional<Integer> newGrade = myList.stream().reduce((a, b) -> {return a + b;} );
-                    System.out.println(newGrade.get() / myList.size());
-                    System.out.println(calcLetterGrade(newGrade.get() / myList.size()));
-                    submitGrade = false;
-                }
-
+            } else {
+                myList.add(numSeven);
+                Optional<Integer> newGrade = myList.stream().reduce((a, b) -> {return a + b;} );
+                System.out.println(newGrade.get() / myList.size());
+                System.out.println(calcLetterGrade(newGrade.get() / myList.size()));
+                submitGrade = false;
             }
+
+        }
 
     }
 
