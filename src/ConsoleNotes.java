@@ -158,14 +158,26 @@ public class ConsoleNotes {
         System.out.println("myName.startsWith(\"Ken\") = " + myName.startsWith("Ken"));
         System.out.println("myName.endsWith(\"eth\") = " + myName.endsWith("eth"));
 
-        String myState = "Texas";
-        System.out.println("myStat.charAt(2) = " + myState.charAt(2));
-        System.out.println("myStat.indexOf(\"Tex\") = " + myState.indexOf("Tex"));
-        System.out.println("myStat.indexOf(\"ex\") = " + myState.indexOf("ex"));
-        System.out.println("myStat.indexOf(\"s\") = " + myState.indexOf("s"));
+        String myState = "Texas is my State";
+        System.out.println("myState.charAt(2) = " + myState.charAt(2));
+        System.out.println("myState.indexOf(\"Tex\") = " + myState.indexOf("Tex"));
+        System.out.println("myState.indexOf(\"ex\") = " + myState.indexOf("ex"));
+        System.out.println("myState.indexOf(\"s\") = " + myState.indexOf("s"));
 
-        System.out.println("myStat.lastIndexOf(\"x\") = " + myState.lastIndexOf("x"));
+        System.out.println("myState.lastIndexOf(\"x\") = " + myState.lastIndexOf("a"));
 
+        System.out.println("myState.length() = " + myState.length());
 
+        System.out.println("myState.replace() = " + myState.replace("T", "Z"));
+
+        String myStateTwo = myState.substring(4, 10);
+        System.out.println(myStateTwo);
+
+        System.out.println(myState.toLowerCase());
+        System.out.println(myState.toUpperCase());
+
+        String userName = "        ken2cool        ";
+        System.out.println("userName.length() [BEFORE TRIM] = " + userName.length());
+        System.out.println("userName.length() [AFTER TRIM] = " + userName.trim().length());
     }
 }
