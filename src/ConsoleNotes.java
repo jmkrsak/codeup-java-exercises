@@ -1,7 +1,50 @@
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
+
 public class ConsoleNotes {
+
+    public static void singASong(String what, String where) {
+
+        System.out.printf("The %s at night are big and bright deep in the heart of %s%n", what, where);
+
+    }
+
+    public static int addNums(int x, int y, int z) {
+        return x + y + z;
+
+    }
+
+    public static double addNums(double x, double y, double z) {
+        return x + y + z;
+
+    }
+
+    public static int addNums(String x, String y, String z) {
+        return parseInt(x) + parseInt(y) + parseInt(z);
+
+    }
+
+//    public static void changeString (String[] args) {
+//
+//    }
+
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        singASong("bars", "New Orleans");
+        singASong("casinos", "Las Vegas");
+
+        System.out.println("addNums(2, 4, 6)  = " + addNums(2, 4, 6));
+        System.out.println("addNums(2.5, 4.5, 6.5)  = " + addNums(2.5, 4.5, 6.5));
+        System.out.println("addNums(2.5, 4.5, 6.5)  = " + addNums("2", "4", "6"));
+
+        String starsStringVar = "stars";
+        String texasNameVar = "Texas";
+
+        singASong(starsStringVar, texasNameVar);
+
 //        String name = "laura";
 //        int age = 32;
 //        String lastName = "Ruiz";
@@ -25,7 +68,7 @@ public class ConsoleNotes {
 //        String faveRes = myScanner.nextLine();
 //        System.out.println("You entered: --> \"" + faveRes + "\" <--");
 
-        Scanner scanner = new Scanner(System.in);
+
 
 //        int a = 28;
 //        int b = 30;
@@ -147,37 +190,40 @@ public class ConsoleNotes {
 //        }
 //        System.out.println(num);
 
-        String myName = "Kenneth";
-        String myName2 = "Kenneth";
-        System.out.println("myName = myName2 = " + (myName == myName2));
-        System.out.println(myName.equals(myName2));
+//        String myName = "Kenneth";
+//        String myName2 = "Kenneth";
+//        System.out.println("myName = myName2 = " + (myName == myName2));
+//        System.out.println(myName.equals(myName2));
+//
+//        System.out.println("myName.startsWith(\"Kenny\") = " + myName.startsWith("Kenny"));
+//        System.out.println("myName.endsWith(\"net\") = " + myName.endsWith("net"));
+//        System.out.println("myName.equalsIgnoreCase(\"KENNETH\") = " + myName.equalsIgnoreCase("KENNETH"));
+//        System.out.println("myName.startsWith(\"Ken\") = " + myName.startsWith("Ken"));
+//        System.out.println("myName.endsWith(\"eth\") = " + myName.endsWith("eth"));
+//
+//        String myState = "Texas is my State";
+//        System.out.println("myState.charAt(2) = " + myState.charAt(2));
+//        System.out.println("myState.indexOf(\"Tex\") = " + myState.indexOf("Tex"));
+//        System.out.println("myState.indexOf(\"ex\") = " + myState.indexOf("ex"));
+//        System.out.println("myState.indexOf(\"s\") = " + myState.indexOf("s"));
+//
+//        System.out.println("myState.lastIndexOf(\"x\") = " + myState.lastIndexOf("a"));
+//
+//        System.out.println("myState.length() = " + myState.length());
+//
+//        System.out.println("myState.replace() = " + myState.replace("T", "Z"));
+//
+//        String myStateTwo = myState.substring(4, 10);
+//        System.out.println(myStateTwo);
+//
+//        System.out.println(myState.toLowerCase());
+//        System.out.println(myState.toUpperCase());
+//
+//        String userName = "        ken2cool        ";
+//        System.out.println("userName.length() [BEFORE TRIM] = " + userName.length());
+//        System.out.println("userName.length() [AFTER TRIM] = " + userName.trim().length());
 
-        System.out.println("myName.startsWith(\"Kenny\") = " + myName.startsWith("Kenny"));
-        System.out.println("myName.endsWith(\"net\") = " + myName.endsWith("net"));
-        System.out.println("myName.equalsIgnoreCase(\"KENNETH\") = " + myName.equalsIgnoreCase("KENNETH"));
-        System.out.println("myName.startsWith(\"Ken\") = " + myName.startsWith("Ken"));
-        System.out.println("myName.endsWith(\"eth\") = " + myName.endsWith("eth"));
 
-        String myState = "Texas is my State";
-        System.out.println("myState.charAt(2) = " + myState.charAt(2));
-        System.out.println("myState.indexOf(\"Tex\") = " + myState.indexOf("Tex"));
-        System.out.println("myState.indexOf(\"ex\") = " + myState.indexOf("ex"));
-        System.out.println("myState.indexOf(\"s\") = " + myState.indexOf("s"));
 
-        System.out.println("myState.lastIndexOf(\"x\") = " + myState.lastIndexOf("a"));
-
-        System.out.println("myState.length() = " + myState.length());
-
-        System.out.println("myState.replace() = " + myState.replace("T", "Z"));
-
-        String myStateTwo = myState.substring(4, 10);
-        System.out.println(myStateTwo);
-
-        System.out.println(myState.toLowerCase());
-        System.out.println(myState.toUpperCase());
-
-        String userName = "        ken2cool        ";
-        System.out.println("userName.length() [BEFORE TRIM] = " + userName.length());
-        System.out.println("userName.length() [AFTER TRIM] = " + userName.trim().length());
     }
 }

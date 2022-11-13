@@ -63,3 +63,21 @@ public class ConsoleExercises {
 
    }
 }
+
+//        Hello there, codeup. Nice to see you.
+//        Salutations, codeup!
+//        The value of pi is approximately 3.14159.
+//        Enter an integer: 10
+//        Enter 3 words: i love pi
+//        i
+//        love
+//        pi
+//        i
+//        love
+//        pi
+//        Enter a sentence: i love pi
+//        i love pi
+//        Enter the Length of your room: 10
+//        Enter the Width of your room: 20
+//        If your room's length is 10, and your room's width is 20; your rooms area is 200, and your rooms perimeter is 60.
+//        Process finished with exit code 0

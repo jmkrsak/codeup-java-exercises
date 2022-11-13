@@ -55,3 +55,19 @@ public class HelloWorld {
             System.out.println(makeGreater);
         }
 }
+
+//        Hello, World!
+//        Hello, World!
+//        16
+//        C
+//        123.0
+//        5, -3
+//        128
+//        128
+//        127
+//        127
+//        -127
+//        -127
+//        -127
+//        -126
+//        -125
