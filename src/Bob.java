@@ -23,7 +23,7 @@ public class Bob {
                 System.out.println("Whatever.");
             }
 
-            System.out.print("Would you like to talk to Bob? [y / n]: ");
+            System.out.print("Anything else you need from me old timer? [y / n]: ");
             String answer = scanner.nextLine();
 
             if (answer.equalsIgnoreCase("y")) {
