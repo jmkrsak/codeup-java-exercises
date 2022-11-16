@@ -2,10 +2,21 @@ import java.util.Arrays;
 
 public class ArraysExercises {
 
-    public static Person[] addPerson(Person[] persons, Person additionalPerson) {
+    private Person[] myPersons;
+
+    public void addPerson(Person[] persons, Person additionalPerson) {
         Person[] newPersonArray = new Person[persons.length + 1];
-        newPersonArray[persons.length] = additionalPerson;
-        return newPersonArray;
+        newPersonArray[newPersonArray.length - 1] = additionalPerson;
+        this.myPersons = newPersonArray;
+    }
+
+
+    public ArraysExercises() {
+        this.myPersons = new Person[] {
+        new Person("Danny"),
+        new Person("John-Michael"),
+        new Person("Matthew")
+        };
     }
 
     public static void main(String[] args) {
@@ -13,11 +24,21 @@ public class ArraysExercises {
         int[] numbers = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(numbers));
 
-        Person[] persons = new Person[3];
+//        Person[] persons = new Person[3];
 
-        persons[0] = new Person("Danny");
-        persons[1] = new Person("John-Michael");
-        persons[2] = new Person("Matthew");
+
+
+        for(Person i : persons) {
+            System.out.println(i.getName());
+        }
+
+        ArraysExercises exercises = new ArraysExercises();
+        System.out.println(exercises.myPersons.length);
+        exercises.addPerson();
+
+        Person persons1 = new Person("Timmy");
+
+
 
         for(Person i : persons) {
             System.out.println(i.getName());
