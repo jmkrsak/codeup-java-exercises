@@ -6,10 +6,14 @@ public class ArraysExercises {
 
     public void addPerson(Person[] persons, Person additionalPerson) {
         Person[] newPersonArray = new Person[persons.length + 1];
+        for(int per = 0; per < persons.length; per++) {
+            newPersonArray[per] = persons[per];
+
+        }
         newPersonArray[newPersonArray.length - 1] = additionalPerson;
         this.myPersons = newPersonArray;
-    }
 
+    }
 
     public ArraysExercises() {
         this.myPersons = new Person[] {
@@ -26,22 +30,13 @@ public class ArraysExercises {
 
 //        Person[] persons = new Person[3];
 
-
-
-        for(Person i : persons) {
-            System.out.println(i.getName());
-        }
-
-        ArraysExercises exercises = new ArraysExercises();
-        System.out.println(exercises.myPersons.length);
-        exercises.addPerson();
-
         Person persons1 = new Person("Timmy");
 
+        ArraysExercises exercises = new ArraysExercises();
+        exercises.addPerson(exercises.myPersons, persons1);
 
-
-        for(Person i : persons) {
-            System.out.println(i.getName());
+        for(Person per : exercises.myPersons) {
+            System.out.println(per.getName());
         }
 
     }
