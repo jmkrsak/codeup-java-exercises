@@ -55,7 +55,7 @@ public class Input {
 //    }
 
     public double getDouble() {
-        System.out.print("Type decimal number here: ");
+        System.out.print("Type decimal/radius here: ");
         if (scanner.hasNextDouble()) {
             return scanner.nextDouble();
         } else {
