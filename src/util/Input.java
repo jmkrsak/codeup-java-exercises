@@ -27,8 +27,11 @@ public class Input {
 
     }
 
-    public int getInt() {
-        System.out.print("Type whole number here: ");
+    public int getInt(String prompt) {
+        if (!prompt.equals("")) {
+            System.out.print(prompt);
+        } else System.out.print("Type whole number here: ");
+
         if (scanner.hasNextInt()) {
             return scanner.nextInt();
         } else {
@@ -131,7 +134,7 @@ public class Input {
 
         } else {
             System.out.printf("You have guessed incorrectly, try again!%n");
-            getInt(min, max);
+//            getInt(min, max);
         }
 
         return guessedNum;
@@ -172,10 +175,10 @@ public class Input {
     public static void main(String[] args) {
         Input input = new Input(new Scanner(System.in));
         System.out.println(input.getString());
-        System.out.println(input.getInt());
+        System.out.println(input.getInt(""));
         System.out.println(input.getDouble());
         System.out.println(input.yesNo());
-        System.out.println(input.getInt(10, 30));
+//        System.out.println(input.getInt(10, 30));
         System.out.println(input.getDouble(.10, .20));
 
     }
