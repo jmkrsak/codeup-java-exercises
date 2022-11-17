@@ -33,6 +33,11 @@ public class ArraysExercises {
         Person persons1 = new Person("Timmy");
 
         ArraysExercises exercises = new ArraysExercises();
+
+        for(Person per : exercises.myPersons) {
+            System.out.println(per.getName());
+        }
+
         exercises.addPerson(exercises.myPersons, persons1);
 
         for(Person per : exercises.myPersons) {
