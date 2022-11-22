@@ -64,7 +64,7 @@ public class GradesApplication {
     public static void yesNo() {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Would you like to another student?: ");
+        System.out.print("Would you like to see another student?: ");
 
         if (scanner.hasNext("y") || scanner.hasNext("Y") || scanner.hasNext("yes") || scanner.hasNext("Yes")) {
             scanner.nextLine();
