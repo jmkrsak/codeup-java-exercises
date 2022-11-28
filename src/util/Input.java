@@ -20,18 +20,15 @@ public class Input {
 //        return "";
 //    }
 
-    public String getString() {
-        System.out.print("Type word(s) here: ");
+    public String getString(String string) {
+        System.out.print(string);
 
         return scanner.nextLine();
 
     }
 
-    public int getInt(String prompt) {
-        if (!prompt.equals("")) {
-            System.out.print(prompt);
-        } else System.out.print("Type whole number here: ");
-
+    public int getInt(String string) {
+        System.out.print(string);
         if (scanner.hasNextInt()) {
             return scanner.nextInt();
         } else {
@@ -54,8 +51,8 @@ public class Input {
 //        return input;
 //    }
 
-    public double getDouble() {
-        System.out.print("Type decimal/radius here: ");
+    public double getDouble(String string) {
+        System.out.print(string);
         if (scanner.hasNextDouble()) {
             return scanner.nextDouble();
         } else {
@@ -91,8 +88,8 @@ public class Input {
 //        return false;
 //    }
 
-    public boolean yesNo() {
-        System.out.print("Respond by typing (Y)es or (N)o here: ");
+    public boolean yesNo(String string) {
+        System.out.print(string);
 
         if (scanner.hasNext("y") || scanner.hasNext("Y") || scanner.hasNext("yes") || scanner.hasNext("Yes")) {
                 scanner.nextLine();
@@ -101,9 +98,10 @@ public class Input {
                 scanner.nextLine();
                 return false;
         } else {
-                scanner.nextLine();
                 System.out.println("invalid input");
-                return false;
+                scanner.nextLine();
+                return yesNo(string);
+
         }
 
     }
@@ -174,10 +172,10 @@ public class Input {
 
     public static void main(String[] args) {
         Input input = new Input(new Scanner(System.in));
-        System.out.println(input.getString());
-        System.out.println(input.getInt(""));
-        System.out.println(input.getDouble());
-        System.out.println(input.yesNo());
+        System.out.println(input.getString("Type word(s) here: "));
+        System.out.println(input.getInt("Type whole number here: "));
+        System.out.println(input.getDouble("Type decimal here: "));
+        System.out.println(input.yesNo("Respond by typing (Y)es or (N)o here: "));
 //        System.out.println(input.getInt(10, 30));
         System.out.println(input.getDouble(.10, .20));
 

@@ -11,7 +11,7 @@ public class CircleApp {
 
     public static void main(String[] args) {
         Input input = new Input(new Scanner(System.in));
-        double radius = input.getDouble();
+        double radius = input.getDouble("Enter the radius here: ");
         Circle circle = new Circle(radius);
         System.out.printf("circumference and area are %.2f and %.2f",circle.getCircumference(radius), circle.getArea(radius));
     }
