@@ -1,20 +1,105 @@
 package grades;
 
+import util.Input;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Grocery {
 
-//    private String groceryList;
-//
-//    private int howMany;
-//
-//    public Grocery(String groceryList, int howMany) {
-//        this.groceryList = groceryList;
-//        this.howMany = howMany;
-//    }
-//
+    private static final Scanner scanner = new Scanner(System.in);
+
+    private static final Input input = new Input(new Scanner(System.in));
+
+    private static HashMap<String, ArrayList<String>> completeGroceryList;
+
+    public static void makeGroceryHash() {
+        completeGroceryList.put(groceryListName, groceryList);
+    }
+
+    private static String groceryListName;
+
+    private static ArrayList<String> groceryList;
+
+    public static void makeArrayList() {
+        groceryList.add(itemName + " " + numOfItems);
+    }
+
+    private String itemCategory;
+
+    private static String itemName;
+
+    private static int numOfItems;
+
+    public Grocery(HashMap<String, ArrayList<String>> completeGroceryList) {
+        this.completeGroceryList = completeGroceryList;
+    }
+
+    public static void groceryApp3() {
+
+        System.out.println("Select a category.");
+        String category = input.getString("Beverages | Bread | Canned | Dairy | Meat | Produce | Other");
+
+        itemName = input.getString("Enter the name of the item: ");
+
+        numOfItems = input.getInt("Enter the number of items");
+
+        boolean yesNoInput = input.yesNo("Would you like to finalize this list? (Y)es or (N)o: ");
+
+        if (yesNoInput) {
+
+            makeArrayList();
+            makeGroceryHash();
+
+        } else {
+
+        System.out.println("Okay, goodbye");
+
+        }
+
+    }
+
+    public static void groceryApp2() {
+
+        boolean newYesNoInput = input.yesNo("Would you like to enter a new item? (Y)es or (N)o: ");
+
+        if (newYesNoInput) {
+            scanner.nextLine();
+            groceryApp3();
+
+        } else {
+
+        System.out.println("Okay, goodbye");
+
+        }
+
+    }
+
+    public static void groceryApp() {
+
+        boolean yesNoInput = input.yesNo("Would you like to make a grocery list? (Y)es or (N)o: ");
+
+        if (yesNoInput) {
+
+            groceryApp2();
+
+        } else {
+
+            System.out.println("Okay, goodbye");
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        groceryApp();
+
+    }
+
+}
+
 //    public String getGroceryList() {
 //        return groceryList;
 //    }
@@ -128,4 +213,3 @@ public class Grocery {
 //
 //    }
 
-}
