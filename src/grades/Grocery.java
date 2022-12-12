@@ -8,11 +8,61 @@ import java.util.Scanner;
 
 public class Grocery {
 
-    private static final Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
-    private static final Input input = new Input(new Scanner(System.in));
+    private static Input input = new Input(new Scanner(System.in));
 
-    private static HashMap<String, ArrayList<String>> completeGroceryList;
+    private static boolean yesNoInput;
+
+    public static HashMap<String, ArrayList<String>> getCompleteGroceryList() {
+        return completeGroceryList;
+    }
+
+    public static void setCompleteGroceryList(HashMap<String, ArrayList<String>> completeGroceryList) {
+        Grocery.completeGroceryList = completeGroceryList;
+    }
+
+    public static String getGroceryListName() {
+        return groceryListName;
+    }
+
+    public static void setGroceryListName(String groceryListName) {
+        Grocery.groceryListName = groceryListName;
+    }
+
+    public static ArrayList<String> getGroceryList() {
+        return groceryList;
+    }
+
+    public static void setGroceryList(ArrayList<String> groceryList) {
+        Grocery.groceryList = groceryList;
+    }
+
+    public static String getItemCategory() {
+        return itemCategory;
+    }
+
+    public static void setItemCategory(String itemCategory) {
+        Grocery.itemCategory = itemCategory;
+    }
+
+    public static String getItemName() {
+        return itemName;
+    }
+
+    public static void setItemName(String itemName) {
+        Grocery.itemName = itemName;
+    }
+
+    public static String getNumOfItems() {
+        return numOfItems;
+    }
+
+    public static void setNumOfItems(String numOfItems) {
+        Grocery.numOfItems = numOfItems;
+    }
+
+    private static HashMap<String, ArrayList<String>> completeGroceryList = new HashMap<>();
 
     public static void makeGroceryHash() {
         completeGroceryList.put(groceryListName, groceryList);
@@ -20,17 +70,19 @@ public class Grocery {
 
     private static String groceryListName;
 
-    private static ArrayList<String> groceryList;
+    private static ArrayList<String> groceryList = new ArrayList<>();
 
     public static void makeArrayList() {
-        groceryList.add(itemName + " " + numOfItems);
+
+        groceryList.add("Category: " + itemCategory + " | " + itemName + " | " + numOfItems);
+
     }
 
-    private String itemCategory;
+    private static String itemCategory;
 
     private static String itemName;
 
-    private static int numOfItems;
+    private static String numOfItems;
 
     public Grocery(HashMap<String, ArrayList<String>> completeGroceryList) {
         this.completeGroceryList = completeGroceryList;
@@ -38,23 +90,30 @@ public class Grocery {
 
     public static void groceryApp3() {
 
-        System.out.println("Select a category.");
-        String category = input.getString("Beverages | Bread | Canned | Dairy | Meat | Produce | Other");
+        itemCategory = input.getString("Select a category:\nBeverages | Bread | Canned | Dairy | Meat | Produce | Other: ");
 
         itemName = input.getString("Enter the name of the item: ");
 
-        numOfItems = input.getInt("Enter the number of items");
+        numOfItems = input.getString("Enter the number of items: ");
 
-        boolean yesNoInput = input.yesNo("Would you like to finalize this list? (Y)es or (N)o: ");
+        yesNoInput = input.yesNo("Would you like to finalize this list? If you select no, you can make a new item.\n(Y)es or (N)o: ");
 
         if (yesNoInput) {
 
+
+
             makeArrayList();
             makeGroceryHash();
+            System.out.println(completeGroceryList.get(groceryListName));
+            for(String i: completeGroceryList.keySet()) {
+                System.out.print(completeGroceryList.get(i));
+            }
 
         } else {
 
-        System.out.println("Okay, goodbye");
+        makeArrayList();
+        makeGroceryHash();
+        groceryApp2();
 
         }
 
@@ -62,14 +121,18 @@ public class Grocery {
 
     public static void groceryApp2() {
 
-        boolean newYesNoInput = input.yesNo("Would you like to enter a new item? (Y)es or (N)o: ");
+        groceryListName = input.getString("Enter a title for your grocery list: ");
 
-        if (newYesNoInput) {
-            scanner.nextLine();
+        yesNoInput = input.yesNo("Would you like to enter a new item? (Y)es or (N)o: ");
+
+        if (yesNoInput) {
+
             groceryApp3();
 
         } else {
 
+        makeArrayList();
+        makeGroceryHash();
         System.out.println("Okay, goodbye");
 
         }
@@ -78,7 +141,7 @@ public class Grocery {
 
     public static void groceryApp() {
 
-        boolean yesNoInput = input.yesNo("Would you like to make a grocery list? (Y)es or (N)o: ");
+        yesNoInput = input.yesNo("Would you like to make a grocery list? (Y)es or (N)o: ");
 
         if (yesNoInput) {
 
@@ -99,117 +162,3 @@ public class Grocery {
     }
 
 }
-
-//    public String getGroceryList() {
-//        return groceryList;
-//    }
-//
-//    public int getHowMany() {
-//        return howMany;
-//    }
-//
-
-//    public static void groceryList() {
-//
-//        Scanner scanner = new Scanner(System.in);
-//
-//        HashMap<String, Grocery> groceryHash = new HashMap<>();
-//
-//        Grocery apple = new Grocery("apple", 2);
-//        groceryHash.put("Fruit", apple);
-//
-//        Grocery steak = new Grocery("steak", 1200);
-//        groceryHash.put("Cow", steak);
-//
-//        Grocery cheese = new Grocery("cheese", 69);
-//        groceryHash.put("Dairy", cheese);
-//
-//        Grocery bacon = new Grocery("bacon", 31000);
-//        groceryHash.put("Pork", bacon);
-//
-//        System.out.print("Here is the Grocery list: \n");
-//
-//        for(int i: groceryHash.keySet()) {
-//            System.out.print("| " + i + " |  ");
-//        }
-//        System.out.print("\nWhich grocery item would you like to see: ");
-//
-//        int userInput = Integer.parseInt(scanner.nextLine());
-//
-//        if (groceryHash.containsKey(userInput)) {
-//            System.out.println("Food type: " + groceryHash.get(userInput).getGroceryList() + " - GitHub Username: " + userInput);
-//        } else {
-//            System.out.println("Sorry, no student found with the GitHub username of \"" + userInput + "\".");
-//        }
-//
-//        yesNo();
-//
-//    }
-//
-//    public static void yesNo() {
-//
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.print("Would you like to see another student?: ");
-//
-//        if (scanner.hasNext("y") || scanner.hasNext("Y") || scanner.hasNext("yes") || scanner.hasNext("Yes")) {
-//            scanner.nextLine();
-//            groceryList();
-//        } else if (scanner.hasNext("n") || scanner.hasNext("N") || scanner.hasNext("no") || scanner.hasNext("No")) {
-//            scanner.nextLine();
-//        } else {
-//            scanner.nextLine();
-//
-//            yesNo();
-//
-//        }
-//
-//    }
-//
-//    public static void main(String[] args) {
-//
-//        groceryList();
-//
-//    }
-//
-//    public static void createGroceryList() {
-//
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.print("Would you like to create a grocery list?: ");
-//
-//        if (scanner.hasNext("y") || scanner.hasNext("Y") || scanner.hasNext("yes") || scanner.hasNext("Yes")) {
-//            scanner.nextLine();
-//            enterANewItem();
-//        } else if (scanner.hasNext("n") || scanner.hasNext("N") || scanner.hasNext("no") || scanner.hasNext("No")) {
-//            scanner.nextLine();
-//        } else {
-//            scanner.nextLine();
-//
-//            createGroceryList();
-//
-//        }
-//
-//    }
-//
-//    public static void enterANewItem() {
-//
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.print("Would you like enter a new item?: ");
-//
-//        if (scanner.hasNext("y") || scanner.hasNext("Y") || scanner.hasNext("yes") || scanner.hasNext("Yes")) {
-//            scanner.nextLine();
-//            enterANewItem();
-//        } else if (scanner.hasNext("n") || scanner.hasNext("N") || scanner.hasNext("no") || scanner.hasNext("No")) {
-//            scanner.nextLine();
-//        } else {
-//            scanner.nextLine();
-//
-//            renderList();
-//
-//        }
-//
-//        public static void renderList() {
-//
-//        }
-//
-//    }
-

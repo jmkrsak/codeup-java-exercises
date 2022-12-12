@@ -92,10 +92,10 @@ public class Input {
         System.out.print(string);
 
         if (scanner.hasNext("y") || scanner.hasNext("Y") || scanner.hasNext("yes") || scanner.hasNext("Yes")) {
-//                scanner.nextLine();
+                scanner.nextLine();
                 return true;
         } else if (scanner.hasNext("n") || scanner.hasNext("N") || scanner.hasNext("no") || scanner.hasNext("No")) {
-//                scanner.nextLine();
+                scanner.nextLine();
                 return false;
         } else {
                 System.out.println("invalid input");
